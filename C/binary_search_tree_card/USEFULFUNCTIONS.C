@@ -39,3 +39,16 @@ void postorder(struct TreeNode* root, int *ret, int *size){
 
 }
 
+// For level order traversal see the function
+
+//basic  movement function
+
+bool traverse(struct TreeNode* root,int data)
+{
+    if(root!=NULL){
+        if(root->val!=data)res=false;
+        res = traverse(root->left,data);
+        res = traverse(root->right,data);
+    }
+    return res;
+}
